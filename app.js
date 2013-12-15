@@ -3,7 +3,7 @@ var http = require('http');
 var path = require('path');
 
 var site = require('./lib/site.js');
-var posts = require('./lib/posts.js');
+var je_posts = require('./lib/je_posts.js');
 
 var app = express();
 
@@ -14,12 +14,15 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
+app.use(je_posts.middleware());
 app.use(app.router);
 app.use(express.static(site.dir.public));
 
 if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
+
+je_posts.routes(app);
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + app.get('port'));
