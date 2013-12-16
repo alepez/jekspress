@@ -12,7 +12,9 @@
     "express": "3.2.6",
     "jade": "*",
     "js-yaml": "*",
-    "async": "*"
+    "async": "*",
+    "moment" : "*",
+    "underscore": "*"
   },
     "repository": {
     "type": "git",
