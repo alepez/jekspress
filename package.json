@@ -14,7 +14,8 @@
     "js-yaml": "*",
     "async": "*",
     "moment" : "*",
-    "underscore": "*"
+    "underscore": "*",
+    "marked": "*"
   },
     "repository": {
     "type": "git",
