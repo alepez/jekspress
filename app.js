@@ -7,6 +7,8 @@ var jekspress = require('./lib/jekspress.js');
 
 var app = express();
 
+site.settings['url_suffix'] = '';
+
 jekspress.setup();
 
 app.set('port', process.env.PORT || 3000);
